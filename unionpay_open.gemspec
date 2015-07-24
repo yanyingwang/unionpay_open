@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rake", "~> 10.0"
   spec.add_dependency "rspec"
   spec.add_dependency 'i18n'
-  spec.add_dependency 'activesupport-inflector'
+  spec.add_dependency 'activesupport'
   spec.add_dependency 'faraday'
 
 end

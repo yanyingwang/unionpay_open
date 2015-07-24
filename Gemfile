@@ -3,7 +3,7 @@ source 'http://ruby.taobao.org/'
 
 
 gem 'i18n'
-gem 'activesupport-inflector'
+gem 'activesupport'
 gem 'faraday'
 
 
