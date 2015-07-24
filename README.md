@@ -22,7 +22,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+
+# 配置
+UnionpayOpen.config do |unionpay|
+  unionpay.pfx_file = 'tmp/acp.pfx'
+  unionpay.pfx_file_password = '000000'
+  unionpay.ca_file = 'tmp/acp.cer'
+  unionpay.merchant_no = '111111111111111'
+end
+
+
+
+# 前台交易请求地址
+response = UnionpayOpen::Wap.front_trans_req(signMethod: '01',
+                                  txnType: '01',
+                                  txnSubType: '01',
+                                  bizType: '000201',
+                                  channelType: '08',
+                                  frontUrl: 'http://test.com',
+                                  accessType: "0",
+                                  orderId: "abcd1qaz",
+                                  txnAmt: "10000",
+                                  currencyCode: "156")
+```
 
 ## Development
 
