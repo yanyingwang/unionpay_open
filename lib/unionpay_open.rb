@@ -1,5 +1,30 @@
 require "unionpay_open/version"
+require "unionpay_open/base"
+require "unionpay_open/wap"
+require 'active_support/inflector'
+require 'openssl'
+require 'base64'
+require 'faraday'
+
+
 
 module UnionpayOpen
-  # Your code goes here...
+  class << self
+
+    def config
+      yield(self) if block_given?
+      @@x509_certificate = OpenSSL::X509::Certificate.new(File.read(@@ca_file)) if defined? @@ca_file
+      if defined?(@@pfx_file) and defined?(@@pfx_file_password)
+        @@pkcs12 = OpenSSL::PKCS12.new( File.read(@@pfx_file), @@pfx_file_password )
+      end
+    end
+
+    [:pfx_file=, :pfx_file_password=, :ca_file=, :merchant_no=].each do |method_name|
+      define_method method_name do |value|
+        class_variable_name = "@@" + method_name.to_s[0..-2]
+        self.class_variable_set(class_variable_name, value)
+      end
+    end
+
+  end
 end
