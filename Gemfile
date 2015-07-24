@@ -2,6 +2,11 @@ source 'http://ruby.taobao.org/'
 #source 'https://rubygems.org'
 
 
+gem 'i18n'
+gem 'activesupport-inflector'
+gem 'faraday'
+
+
 group :development do
   gem 'pry'
   gem 'pry-coolline'
