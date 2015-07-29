@@ -33,8 +33,23 @@ UnionpayOpen.config do |unionpay|
   unionpay.ca_file = 'tmp/acp.cer'
   unionpay.merchant_no = '111111111111111'
 end
+
 ```
 
+
+### 查看
+配置载入完成后，可以通过如下命令查看配置文件内容：
+```ruby
+UnionpayOpen.pfx_file
+UnionpayOpen.merchant_no
+
+UnionpayOpen.pkcs12
+UnionpayOpen.pkcs12.to_s
+UnionpayOpen.pkcs12.certificate.serial.to_s
+
+UnionpayOpen.x509_certificate.public_key.to_s
+UnionpayOpen.x509_certificate.serial.to_s
+```
 
 ### 前台交易请求地址
 
