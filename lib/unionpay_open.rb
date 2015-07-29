@@ -26,5 +26,13 @@ module UnionpayOpen
       end
     end
 
+    def floating_point(amount)
+      [ amount[0..-3], amount[-2..-1] ].join('.').to_f
+    end
+
+    def stringing(value)
+      value.round(2).to_s.sub('.', "")
+    end
+
   end
 end
