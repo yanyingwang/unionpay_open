@@ -1,8 +1,8 @@
 # UnionpayOpen
+http://open.unionpay.com
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/unionpay_open`. To experiment with that code, run `bin/console` for an interactive prompt.
+Ruby wapper for Unionpay(银联支付)'s Open API.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
