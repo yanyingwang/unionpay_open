@@ -23,12 +23,18 @@ module UnionpayOpen
       end
     end
 
-    def floating_point(amount)
-      [ amount[0..-3], amount[-2..-1] ].join('.').to_f
+    def fen2yuan(amount)
+      value = amount.to_s
+      [ value[0..-3], value[-2..-1] ].join('.').to_f
     end
 
-    def stringing(value)
-      value.round(2).to_s.sub('.', "")
+    def yuan2fen(amount)
+      value = amount.to_s.split('.')
+      return (value.first + "00").to_i if value.size == 1
+
+      a, b = value.first, value.last
+      (b += "0") if b.size == 1
+      (a + b[0..1]).to_i
     end
 
   end

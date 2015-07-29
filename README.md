@@ -51,6 +51,17 @@ UnionpayOpen.x509_certificate.public_key.to_s
 UnionpayOpen.x509_certificate.serial.to_s
 ```
 
+### 单位转换
+银联接口总额使用分做单位，可以如如下方法转换：
+```ruby
+# 10000分 = 100元
+UnionpayOpen.fen2yuan(10000)
+
+
+# 100.1元 = 10010分
+UnionpayOpen.yuan2fen(100.1)
+```
+
 ### 前台交易请求地址
 
 ```ruby
