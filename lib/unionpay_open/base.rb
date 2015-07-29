@@ -2,10 +2,8 @@ module UnionpayOpen
   Base = Class.new do
     class << self
 
-      ENDPOINT = 'https://101.231.204.80:5000/gateway/api/'
-
       def faraday
-        Faraday.new(ENDPOINT, :ssl => {:verify => false})
+        Faraday.new(@@endpoint, :ssl => {:verify => false})
       end
 
       def sign(data)
