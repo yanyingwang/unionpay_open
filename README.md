@@ -33,8 +33,10 @@ UnionpayOpen.config do |unionpay|
   unionpay.ca_file = 'tmp/acp.cer'
   unionpay.merchant_no = '111111111111111'
 
-  # unionpay.env = 'production'
-  # default value is 'development'
+  # unionpay.env = 'production'     # 默认值为'development'，其可自动识别rack环境。
+                                    # 如： ENV['RACK_ENV']如果为'production'，此gem则会自动加载为production环境。
+                                    # 可通过`UnionpayOpen.env`来检查确定Gem当前使用的环境。
+                                    # 此值的设定，主要影响`UnionpayOpen.endpoint`的值，即请求的银联网关地址。
 
 end
 
