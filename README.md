@@ -62,7 +62,7 @@ response = UnionpayOpen::Wap.front_trans_req( front_url: 'http://test.com',
 
 **注意**：
 
-1. 方法名请按照ruby规范，用snake方式（下划线连接单词）书写，Gem会在内部自动进行转换以适应银联接口。
+1. 方法名支持按照ruby规范，用snake方式（下划线连接单词）书写，Gem会在内部自动进行转换以适应银联接口。
 
 2. 调用Gem时传入的参数默认只需包含必要字段(如front_trans_req只需front_url, order_id, txn_amt)，其他字段如果也作为参数传入，将覆盖UnionpayOpen内部已经默认定义的值。
 
