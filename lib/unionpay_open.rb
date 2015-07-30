@@ -27,12 +27,12 @@ module UnionpayOpen
       end
     end
 
-    def fen2yuan(amount)
-      value = amount.to_s
+    def fen2yuan(amount) # 10fen = 0.1yuan; 100fen = 1.0yuan
+      value = "00" + amount.to_s
       [ value[0..-3], value[-2..-1] ].join('.').to_f
     end
 
-    def yuan2fen(amount)
+    def yuan2fen(amount)  # 100yuan = 10000fen
       value = amount.to_s.split('.')
 
       return (value.first + "00").to_i if value.size == 1
