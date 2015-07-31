@@ -1,11 +1,13 @@
-require "unionpay_open/version"
-require "unionpay_open/base"
-require "unionpay_open/wap"
 require 'active_support/core_ext/class/attribute_accessors'
 require 'active_support/inflector'
 require 'openssl'
 require 'base64'
 require 'faraday'
+
+require "unionpay_open/version"
+require "unionpay_open/base"
+require "unionpay_open/wap"
+
 
 
 module UnionpayOpen
