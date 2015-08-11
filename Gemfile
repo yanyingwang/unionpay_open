@@ -6,6 +6,7 @@ gem 'i18n'
 gem 'activesupport'
 gem 'faraday'
 gem 'nokogiri'
+gem 'mechanize'
 
 
 group :development do
