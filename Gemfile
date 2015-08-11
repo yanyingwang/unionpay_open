@@ -5,6 +5,7 @@ source 'http://ruby.taobao.org/'
 gem 'i18n'
 gem 'activesupport'
 gem 'faraday'
+gem 'nokogiri'
 
 
 group :development do
