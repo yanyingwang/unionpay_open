@@ -71,7 +71,8 @@ UnionpayOpen.fen2yuan(10000)
 UnionpayOpen.yuan2fen(100.1)
 ```
 
-### 前台交易请求地址
+
+### 前台交易请求地址（默认为支付，即txnType = 01）
 
 ```ruby
 response = UnionpayOpen::Wap.front_trans_req( front_url: 'http://test.com',
@@ -79,6 +80,19 @@ response = UnionpayOpen::Wap.front_trans_req( front_url: 'http://test.com',
 											  txn_amt: "10000" )
 # response 正常情况将输入银联请求结果，为HTML页面代码。
 ```
+
+
+
+### 后台交易请求地址（默认为退货，即txnType = 04）
+
+```ruby
+response = UnionpayOpen::Wap.back_trans_req( backUrl: 'http://test.com',
+                                             orderId: "abcd1qaz",
+                                             origQryId: "201509151115244444444",
+                                             txnAmt: "10000" )
+```
+
+
 
 **注意**：
 
