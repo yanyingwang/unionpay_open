@@ -38,7 +38,7 @@ module UnionpayOpen
           result = result.split("&").map{ |r| r.split("=") }.to_h
           resp_msg = result['respMsg'].force_encoding('utf-8')
 
-          raise "#{response.env.url.to_s}\n => #{result}" if resp_msg.match(/\[.*\]/).to_s != '[0000000]'
+          raise "#{response.env.url.to_s}   \n=> #{result['respMsg']}   \n=> #{result}" if resp_msg.match(/\[.*\]/).to_s != '[0000000]'
 
           resp_msg
         else
