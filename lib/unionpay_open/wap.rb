@@ -40,7 +40,7 @@ module UnionpayOpen
 
           raise "#{response.env.url.to_s}   \n=> #{result['respMsg']}   \n=> #{result}" if resp_msg.match(/\[.*\]/).to_s != '[0000000]'
 
-          resp_msg
+          result
         else
           result
         end
